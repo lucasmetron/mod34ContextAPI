@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-
+import React, { useContext, useState } from 'react';
+import { ContadorContexto } from '../componentes/ContadorContexto'
 
 function Contador(props) {
 
-
-    const [contagem, setContagem] = useState(0)
+    const [contagem, setContagem] = useContext(ContadorContexto)
 
     function anterior() {
         let ant = contagem - 1;
@@ -20,19 +19,8 @@ function Contador(props) {
         <div>
             <div>{props.teste}</div>
             <div>{contagem}</div>
-            <button onClick={() => {
-                anterior();
-                return (
-                    props.refletor(contagem)
-                )
-
-            }}>-</button>
-            <button onClick={() => {
-                sucessor();
-                return (
-                    props.refletor(contagem)
-                )
-            }}>+</button>
+            <button onClick={anterior}>-</button>
+            <button onClick={sucessor}>+</button>
         </div>
     )
 }
