@@ -17,7 +17,6 @@ function Contador(props) {
 
     return (
         <div>
-            <div>{props.teste}</div>
             <div>{contagem}</div>
             <button onClick={anterior}>-</button>
             <button onClick={sucessor}>+</button>
