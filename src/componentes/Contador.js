@@ -3,7 +3,7 @@ import { ContadorContexto } from '../componentes/ContadorContexto'
 
 function Contador(props) {
 
-    const [contagem, setContagem] = useContext(ContadorContexto)
+    const [contagem, setContagem, teste] = useContext(ContadorContexto)
 
     function anterior() {
         let ant = contagem - 1;
@@ -17,9 +17,11 @@ function Contador(props) {
 
     return (
         <div>
+
             <div>{contagem}</div>
             <button onClick={anterior}>-</button>
             <button onClick={sucessor}>+</button>
+            <div>{teste}</div>
         </div>
     )
 }
