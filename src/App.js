@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Contador from './componentes/Contador';
+import Cabecalho from './componentes/Cabecalho';
 
 function App() {
+
+  const [contagemApp, setContagemApp] = useState(0);
+
+  function refletor(contador) {
+    setContagemApp(contador)
+
+  }
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Cabecalho contagemApp={contagemApp}></Cabecalho>
+      <Contador refletor={refletor}></Contador>
     </div>
+
   );
 }
 
